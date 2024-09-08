@@ -12,6 +12,8 @@ import {
   LinearProgress,
 } from "@mui/material";
 import ProductReviewCard from "./ProductReviewCard";
+import { mens_kurta } from "../../../Data/Mens_Kurta";
+import HomeSectionCard from "../HomeSectionCard/HomeSectionCard";
 
 const product = {
   name: "Basic Tee 6-Pack",
@@ -136,7 +138,7 @@ export default function ProductDetails() {
           </div>
 
           {/* Product info */}
-          <div className="lg:col-span-1 max-auto max-w-2xl px-4 pb-16 sm:px-6 lg:max-w-7xl lg:px-8 lg:pb-24">
+          <div className="lg:col-span-1 max-auto max-w-2xl px-4 pb-16 sm:px-6 lg:max-w-7xl lg:px-8 lg:pb-18">
             <div className="lg:col-span-2 ">
               <h1 className="text-lg lg:text-xl font-semibold text-gray-900">
                 universal outfit
@@ -280,7 +282,7 @@ export default function ProductDetails() {
         </section>
 
         <section>
-          <h1 className="font-semibold text-lg pb-4">
+          <h1 className="font-semibold text-lg pb-6">
             Recent Review & Ratings
           </h1>
           <div className="border p-5">
@@ -294,21 +296,15 @@ export default function ProductDetails() {
               </Grid>
 
               <Grid item xs={5}>
-                <h1 className="text-xl font-semibold pb-1">Product Ratings</h1>
+                <h1 className="text-xl font-semibold pb-6">Product Ratings</h1>
                 <div className="flex items-center space-x-4">
                   <Rating value={4.6} precision={0.5} readOnly />
                   <p className="opacity-60 mt-2">567488 Ratings</p>
                 </div>
                 <Box className="mt-5 space-y-3">
-                  <Grid container alignItems="center" gap={3}>
-                    <Grid item xs={2}>
-                      <p>
-                        5
-                        <FontAwesomeIcon
-                          className="ml-2 text-[14px] text-green-700"
-                          icon={faStar}
-                        />
-                      </p>
+                  <Grid container alignItems="center" gap={2}>
+                    <Grid item xs={3}>
+                      <p>Excellent</p>
                     </Grid>
                     <Grid item xs={7}>
                       <LinearProgress
@@ -319,15 +315,9 @@ export default function ProductDetails() {
                       />
                     </Grid>
                   </Grid>
-                  <Grid container alignItems="center" gap={3}>
-                    <Grid item xs={2}>
-                      <p>
-                        4
-                        <FontAwesomeIcon
-                          className="ml-2 text-[14px] text-green-700"
-                          icon={faStar}
-                        />
-                      </p>
+                  <Grid container alignItems="center" gap={2}>
+                    <Grid item xs={3}>
+                      <p>Very Good</p>
                     </Grid>
                     <Grid item xs={7}>
                       <LinearProgress
@@ -338,15 +328,9 @@ export default function ProductDetails() {
                       />
                     </Grid>
                   </Grid>
-                  <Grid container alignItems="center" gap={3}>
-                    <Grid item xs={2}>
-                      <p>
-                        3
-                        <FontAwesomeIcon
-                          className="ml-2 text-[14px] text-green-700"
-                          icon={faStar}
-                        />
-                      </p>
+                  <Grid container alignItems="center" gap={2}>
+                    <Grid item xs={3}>
+                      <p>Good</p>
                     </Grid>
                     <Grid item xs={7}>
                       <LinearProgress
@@ -363,15 +347,9 @@ export default function ProductDetails() {
                       />
                     </Grid>
                   </Grid>
-                  <Grid container alignItems="center" gap={3}>
-                    <Grid item xs={2}>
-                      <p>
-                        2
-                        <FontAwesomeIcon
-                          className="ml-2 text-[14px] text-green-700"
-                          icon={faStar}
-                        />
-                      </p>
+                  <Grid container alignItems="center" gap={2}>
+                    <Grid item xs={3}>
+                      <p>Average</p>
                     </Grid>
                     <Grid item xs={7}>
                       <LinearProgress
@@ -382,15 +360,9 @@ export default function ProductDetails() {
                       />
                     </Grid>
                   </Grid>
-                  <Grid container alignItems="center" gap={3}>
-                    <Grid item xs={2}>
-                      <p>
-                        1
-                        <FontAwesomeIcon
-                          className="ml-2 text-[14px] text-green-700"
-                          icon={faStar}
-                        />
-                      </p>
+                  <Grid container alignItems="center" gap={2}>
+                    <Grid item xs={3}>
+                      <p>Poor</p>
                     </Grid>
                     <Grid item xs={7}>
                       <LinearProgress
@@ -404,6 +376,16 @@ export default function ProductDetails() {
                 </Box>
               </Grid>
             </Grid>
+          </div>
+        </section>
+        {/* similar products */}
+
+        <section className="pt-10">
+          <h1 className="py-5 text-xl font-bold">Similar Products</h1>
+          <div className="flex flex-wrap space-y-5">
+            {mens_kurta.map((item) => (
+              <HomeSectionCard product={item} />
+            ))}
           </div>
         </section>
       </div>
